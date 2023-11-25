@@ -44,6 +44,14 @@ function createAppButton(btnClass, text) {
   return appBtn
 }
 
+//create and back element p 
+function createTodoParagraph(className, text) {
+  let paragraph = document.createElement('p')
+  paragraph.classList.add(className)
+  paragraph.textContent = text
+  return paragraph
+}
+
 //create and back the form with input and button
 function createTodoItemForm() {
   let form = document.createElement('form')
@@ -84,29 +92,26 @@ function createTodoList() {
 //create variable for create list func
 let todoList = createTodoList()
 
+//create and back element li 
+function createTodoListElement() {
+  let li = document.createElement('li')
+  li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center')
+  return li
+}
+
 //create and back the elements of list(ul) -- list-item(li)
 function createTodoItem(obj, keyName) {
 
   //create li
-  let item = document.createElement('li')
+  let item = createTodoListElement()
 
   //add class at txt in li
-  item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center')
-
   let txtBox = createAppDiv('d-flex')
 
   //add txt at li
-  let txt1 = document.createElement('p')
-  txt1.textContent = `${obj.id}.`
-  txt1.classList.add('text')
-
-  let txt2 = document.createElement('p')
-  txt2.textContent = obj.name
-  txt2.classList.add('text')
-
-  let txt3 = document.createElement('p')
-  txt3.textContent = obj.done
-  txt3.classList.add('text')
+  let txt1 = createTodoParagraph('text', `${obj.id}.`)
+  let txt2 = createTodoParagraph('text', obj.name)
+  let txt3 = createTodoParagraph('text', obj.done)
 
   //create buttons and div for button group
   let buttonGroup = createAppDiv('btn-group', 'btn-box')

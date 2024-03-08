@@ -1,3 +1,6 @@
+//creates a global variable createTodoApp for available globally in the context of the browser window
+export {createTodoApp}
+
 const SERVER_URL = 'http://localhost:3000'
 
 //create variable for create form func
@@ -285,9 +288,6 @@ async function createTodoApp(container, title = `To-do list`, listName) {
   })
 
 }
-
-//creates a global variable createTodoApp for available globally in the context of the browser window
-window.createTodoApp = createTodoApp
 
 // render 
 async function renderTodoList(taskArr, listName) {

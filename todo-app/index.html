@@ -17,7 +17,7 @@
       margin-right: 5px;
     }
   </style>
-  </head>
+</head>
 
 <body>
   <div class="container mb-5">
@@ -28,11 +28,32 @@
     </nav>
   </div>
   <div id="todo-app" class="container"></div>
-  <script defer src="./todos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      createTodoApp(document.getElementById('todo-app'), 'My to-do list', 'my')
-    })
+  <script type="module">
+    import { createTodoApp } from './view.js';
+    import {
+      SERVER_URL,
+      getDataFromServer,
+      addDataToServer,
+      deleteDataFromServer,
+      doneDataAtServerTrue,
+      doneDataAtServerFalse
+    } from './api.js';
+
+    (async () => {
+      const owner = 'my'
+      const getTodoList = await getDataFromServer(owner)
+      createTodoApp(document.getElementById('todo-app'), {
+        title: 'My to-do list',
+        owner,
+        getTodoList,
+        onCreateFormSubmit: addDataToServer,
+        onRemove: deleteDataFromServer,
+        onDoneTrue: doneDataAtServerTrue,
+        onDoneFalse: doneDataAtServerFalse,
+      })
+    }
+    )();
+
   </script>
 </body>
 

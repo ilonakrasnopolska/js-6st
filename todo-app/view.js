@@ -223,8 +223,9 @@ async function createTodoApp(container, {
 function renderTodoList(taskArr, listName, serverObjs, removeObj, doneTrue, doneFalse) {
   todoList.innerHTML = '' //render list 
 
-  taskArr = [...serverObjs] // Обновляем данные в переменной arrayOfStudent
-
+  if (serverObjs) {
+    taskArr = [...serverObjs]
+  }
   taskArr.forEach((obj, index) => {
     const todoItem = createTodoItem(obj, listName, removeObj, doneTrue, doneFalse) //create new li
 

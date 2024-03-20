@@ -1,0 +1,54 @@
+.btn-box {
+    gap: 10px;
+}
+
+.text {
+    margin-right: 5px;
+}
+
+.reload {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.reload__list-btn {
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 20px;
+    transition: transform .3s ease-in-out;
+}
+
+.reload__list-btn:hover {
+    transform: scale(1.1);
+}
+
+.api-storage {
+    background-color: #d90425;
+    border: none;
+}
+
+button:focus {
+    outline: white;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.reset-btn {
+    border: none;
+    padding: 0 25px;
+    opacity: 65%;
+    transition: transform .3s ease-in-out;
+}
+
+.reset-btn:hover {
+    transform: scale(1.2);
+}

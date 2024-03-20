@@ -65,9 +65,7 @@ async function initializeTodoApp(container ,title = 'TODO-LIST', owner = 'my') {
                 done: false
             }
 
-        const newTask = await addDataToServer(todoItem)
-            //add to array of api
-            serverArray.push(newTask)
+            await addDataToServer(todoItem)
 
             // Request updated data from the server
             serverArray = await getDataFromServer(owner)

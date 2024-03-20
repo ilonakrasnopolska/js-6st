@@ -10,11 +10,10 @@ export function getSwitchStorageTypeBtn(initialStorageType = 'LS') {
 
     function updateBtnText() {
         switchStorageTypeBtn.innerHTML = `${storageType === 'SS' ? 'LOCAL' : 'SERVER'}_DATA STORAGE`
-        switchStorageTypeBtn.classList.add(`${storageType === 'SS' ? 'LOCAL' : 'api-storage'}`)
+        switchStorageTypeBtn.classList.add(`${storageType === 'SS' ? 'local' : 'api-storage'}`)
     }
 
     let storageType = initialStorageType
-    console.log('initialStorageType:',storageType)
     updateBtnText()
 
     switchStorageTypeBtn.addEventListener('click', function () {

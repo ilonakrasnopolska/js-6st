@@ -27,7 +27,7 @@
     const isFirstInitApp = localStorage.getItem('storageType') // check if user firstly enter in app
 
     if (!isFirstInitApp){
-      localStorage.setItem('storageType', 'LS')  // firstly entered in use starts with local storage
+      localStorage.setItem('storageType', 'LS')  // firstly entered user starts app with local storage
     }
 
     createTodoApp(document.getElementById('todo-app'), 'My todo-list', 'my')
